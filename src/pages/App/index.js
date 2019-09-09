@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import api from "../../services/api";
 
@@ -15,7 +15,6 @@ class App extends Component {
 
     loadFromServer = async e => {
         const response = await api.get("/accounts");
-        console.log(response.data._embedded.accounts)
         this.setState({
             accounts: response.data._embedded.accounts
         });
@@ -58,9 +57,6 @@ class App extends Component {
 }
 
 class Account extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
