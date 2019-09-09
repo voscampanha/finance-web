@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./auth";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api"
+  baseURL: "https://financevos.herokuapp.com/api"
 });
 
 api.interceptors.request.use(async config => {

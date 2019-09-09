@@ -42,7 +42,7 @@ class SignIn extends Component {
         }
         formBody = formBody.join("&");
 
-        const response = await axios.post("http://localhost:8080/oauth/token", formBody, config);
+        const response = await axios.post("https://financevos.herokuapp.com/oauth/token", formBody, config);
         login(response.data.access_token);
         this.props.history.push("/app");
       } catch (err) {
